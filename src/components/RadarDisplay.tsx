@@ -169,7 +169,7 @@ export const RadarDisplay: React.FC<RadarDisplayProps> = ({
   const activeBlip = allBlips.find((b) => b.isActive) || allBlips[0];
 
   return (
-    <div className="relative flex flex-col items-center justify-center select-none w-full max-w-sm mx-auto">
+    <div className="relative flex flex-col items-center justify-center select-none w-full max-w-md mx-auto">
       {/* Top Capsule Corp Knob Switch */}
       <div className="relative z-20 flex flex-col items-center -mb-2">
         <button
@@ -186,7 +186,7 @@ export const RadarDisplay: React.FC<RadarDisplayProps> = ({
 
       {/* Radar Main Housing */}
       <div
-        className={`relative w-[min(84vw,min(40vh,300px))] h-[min(84vw,min(40vh,300px))] rounded-full p-2.5 sm:p-3 shadow-2xl flex items-center justify-center transition-colors duration-500 shrink-0 ${
+        className={`relative w-[min(94vw,min(54vh,430px))] h-[min(94vw,min(54vh,430px))] rounded-full p-2.5 sm:p-3 shadow-2xl flex items-center justify-center transition-colors duration-500 shrink-0 ${
           mode === 'dragon'
             ? 'bg-gradient-to-b from-slate-200 via-slate-300 to-slate-500 border-4 border-slate-400 ring-4 ring-slate-800/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)]'
             : 'bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border-4 border-cyan-700/60 ring-4 ring-cyan-950/80 shadow-[0_20px_50px_rgba(6,182,212,0.2)]'
@@ -872,7 +872,7 @@ export const RadarDisplay: React.FC<RadarDisplayProps> = ({
       </div>
 
       {/* Compact Tactical Radar Toolbar (Zoom, Layer, Orientation) */}
-      <div className="flex items-center justify-between w-full mt-1 px-1 max-w-[min(92vw,340px)] gap-1 shrink-0">
+      <div className="flex items-center justify-between w-full mt-1 px-1 max-w-[min(94vw,420px)] gap-1 shrink-0">
         {/* Zoom Stepper */}
         <div className="flex items-center bg-slate-900/90 rounded-lg border border-slate-800 p-0.5 text-xs">
           <button
