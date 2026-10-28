@@ -1,0 +1,6 @@
+{
+  "name": "GPS ドラゴンレーダー & 高度ナビ",
+  "description": "スマホのGPSと電子コンパスを活用し、記録した位置までの距離・方角・高度差をドラゴンレーダー風のレーダー画面やコンパスHUDでナビゲーションするアプリ",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Bezel Gradients -->
+    <linearGradient id="bezel-metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="35%" stop-color="#cbd5e1" />
+      <stop offset="70%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="inner-rim" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <!-- Radar Screen Screen Gradients -->
+    <radialGradient id="screen-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="60%" stop-color="#14532d" />
+      <stop offset="90%" stop-color="#052e16" />
+      <stop offset="100%" stop-color="#022c22" />
+    </radialGradient>
+    <!-- Dragon Blip Glow -->
+    <radialGradient id="dragon-blip" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </radialGradient>
+    <filter id="blip-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Top Push Knob / Switch -->
+  <path d="M228 32 h56 a12 12 0 0 1 12 12 v24 a0 0 0 0 1 0 0 h-80 a0 0 0 0 1 0 0 v-24 a12 12 0 0 1 12 -12 z" fill="#e2e8f0" stroke="#475569" stroke-width="6" />
+  <rect x="238" y="16" width="36" height="20" rx="6" fill="#dc2626" stroke="#991b1b" stroke-width="4" />
+
+  <!-- Outer Metallic Radar Shell -->
+  <circle cx="256" cy="276" r="216" fill="url(#bezel-metal)" stroke="#475569" stroke-width="8" filter="drop-shadow(0 14px 20px rgba(0,0,0,0.5))" />
+
+  <!-- Inner Rim Recess -->
+  <circle cx="256" cy="276" r="190" fill="url(#inner-rim)" stroke="#1e293b" stroke-width="4" />
+
+  <!-- Green Radar Glass Screen -->
+  <circle cx="256" cy="276" r="172" fill="url(#screen-glow)" />
+
+  <!-- Radar Grid: Concentric Rings -->
+  <circle cx="256" cy="276" r="140" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.35" />
+  <circle cx="256" cy="276" r="100" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.45" />
+  <circle cx="256" cy="276" r="60"  fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.55" />
+  <circle cx="256" cy="276" r="20"  fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.65" />
+
+  <!-- Radar Grid: Crosshair / Grid lines (Iconic Dragon Radar pattern) -->
+  <line x1="84" y1="276" x2="428" y2="276" stroke="#22c55e" stroke-width="2" opacity="0.45" />
+  <line x1="256" y1="104" x2="256" y2="448" stroke="#22c55e" stroke-width="2" opacity="0.45" />
+
+  <!-- Diagonal Grid Lines -->
+  <line x1="134" y1="154" x2="378" y2="398" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3" />
+  <line x1="378" y1="154" x2="134" y2="398" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3" />
+
+  <!-- Radar Sweep Cone -->
+  <path d="M256 276 L396 226 A172 172 0 0 0 356 140 Z" fill="#4ade80" opacity="0.22" />
+
+  <!-- Center Player Pointer (Red/White Arrow) -->
+  <polygon points="256,252 266,286 256,280 246,286" fill="#ef4444" stroke="#ffffff" stroke-width="2" />
+
+  <!-- Target Dragon Blip (Pulsing Amber Dot with Star) -->
+  <circle cx="340" cy="200" r="16" fill="url(#dragon-blip)" filter="url(#blip-glow)" />
+  <polygon points="340,192 342,198 348,198 343,202 345,208 340,204 335,208 337,202 332,198 338,198" fill="#ffffff" opacity="0.9" />
+
+  <!-- Second ambient target blip -->
+  <circle cx="170" cy="350" r="12" fill="url(#dragon-blip)" opacity="0.85" filter="url(#blip-glow)" />
+
+  <!-- Screen Glass Reflection Highlight -->
+  <path d="M120 180 Q256 120 392 180 A172 172 0 0 0 120 180 Z" fill="#ffffff" opacity="0.08" />
+</svg>

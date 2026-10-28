@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    height: 100%;
+    height: 100dvh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    position: fixed;
+    inset: 0;
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #020617;
+    color: #f1f5f9;
+  }
+
+  #root {
+    height: 100%;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Radar scanline texture overlay */
+.radar-grid-bg {
+  background-image: 
+    radial-gradient(circle at center, rgba(34, 197, 94, 0.12) 0%, rgba(2, 44, 34, 0.95) 75%),
+    linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+  background-position: center center, center center, center center;
+}
+
+/* Radar sweep rotation */
+@keyframes radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 3s linear infinite;
+}
+
+/* Dragon blip pulse */
+@keyframes dragon-pulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.8));
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(251, 191, 36, 1)) drop-shadow(0 0 24px rgba(234, 88, 12, 0.9));
+  }
+}
+
+.animate-dragon-blip {
+  animation: dragon-pulse 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Glow effects */
+.glow-emerald {
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
+}
+
+.glow-amber {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
+}
+
+/* Safe area padding utilities for mobile notches and gesture bars */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 12px);
+}
